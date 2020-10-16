@@ -1,33 +1,31 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
 // Write password to the #password input
 
-var chars = ["a", "b", "j", "z"]
-var nums = [1, 2, 3, 4, 5, 6, 7, 8]
-var sChars = ["@", "$", "!", "%", "&"]
-var emojis = ["😂", "😈", "😊", "🙄"]
-
+var chars = ["a", "b", "c", "d", "e", "q", "j", "z"]
+var uChars = ["A", "G", "F", "X", "V", "K", "R", "Y"]
+var nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+var sChars = ["@", "$", "!", "%", "&", "*", "^"]
+var emojis = ["😂", "😈", "😊", "🙄", "🥺", "😳", "🙈", "😉", "😅", "🤨", "🤓", "🙃"]
 var password = document.querySelector("#passwordArea")
 
 function StartGenny() {
     var possibilties = []
-
     var length = parseInt(prompt("How long does this password need to be?"))
     
     if(length < 8 || length > 128 || isNaN(length)) {
         alert("invalid password option, refresh")
     } else {
         
-        var charsTrue = confirm("Do you want characters?")
+        var charsTrue = confirm("Do you want lowercase letters?")
+        var uCharsTrue = confirm("Do you want uppercare letters")
         var numsTrue = confirm("Do you want numbers?")
-        var sCharsTrue = confirm("Do you want special characters?")
+        var sCharsTrue = confirm("Do you want special symbols?")
         var emojisTrue = confirm("Do you want emojis?")
     
         if (charsTrue) possibilties.push(chars)
+        if (uCharsTrue) possibilties.push(uChars)
         if (numsTrue) possibilties.push(nums)
-        if (sCharsTrue) { possibilties.push(sChars) }
-        if (emojisTrue) { possibilties.push(emojis) }
+        if (sCharsTrue) possibilties.push(sChars)
+        if (emojisTrue) possibilties.push(emojis)
     
         var pw = ""
     
