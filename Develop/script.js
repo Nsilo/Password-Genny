@@ -1,4 +1,4 @@
-// Write password to the #password input
+// All of my arrays for the password generator
 
 var chars = ["a", "b", "c", "d", "e", "q", "j", "z"]
 var uChars = ["A", "G", "F", "X", "V", "K", "R", "Y"]
@@ -6,6 +6,8 @@ var nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 var sChars = ["@", "$", "!", "%", "&", "*", "^", "©", "☯︎", "☮︎", "Ω"]
 var emojis = ["😂", "😈", "😊", "🙄", "🥺", "😳", "🙈", "😉", "😅", "🤨", "🤓", "🙃"]
 var password = document.querySelector("#passwordArea")
+
+// Making a function that rolls through all my arrays and gives the person options on what they do/dont want in their password
 
 function StartGenny() {
     var possibilties = []
@@ -29,6 +31,7 @@ function StartGenny() {
     
         var pw = ""
     
+        // for loop running through all my possibilties for the password
     while (pw.length < length) {
         for (let i = 0; i < possibilties.length; i++) {
             if (pw.length < length){
@@ -43,7 +46,7 @@ function StartGenny() {
     }
 }
 
-// Add event listener to button
+// Added event listener to the button
 document.querySelector("#StartGenny").addEventListener("click", StartGenny)
 
 console.log("😈".length)
